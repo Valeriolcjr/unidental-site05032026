@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 360 83% 43%;
+    --primary-foreground: 0 0% 100%;
+    
+    --navbar: 360 83% 43%;
+    --navbar-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 10% 20%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 0 0% 13%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 360 83% 43%;
+
+    --radius: 1rem;
+    
+    --dark-red: 357 86% 29%;
+    --light-red: 360 83% 95%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(360 83% 43%), hsl(0 0% 13%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --shadow-glow: 0 0 40px hsl(0 0% 13% / 0.15);
+    --shadow-elegant: 0 10px 40px -10px hsl(360 83% 43% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 26% 8%;
+    --foreground: 220 14% 96%;
+
+    --card: 220 24% 12%;
+    --card-foreground: 220 14% 96%;
+
+    --popover: 220 24% 12%;
+    --popover-foreground: 220 14% 96%;
+
+    --primary: 360 83% 43%;
+    --primary-foreground: 0 0% 100%;
+    
+    --navbar: 360 83% 43%;
+    --navbar-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 220 14% 96%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 0 0% 13%;
+    --accent-foreground: 220 14% 96%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 220 14% 96%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 360 83% 43%;
+    
+    --dark-red: 357 86% 29%;
+    --light-red: 360 83% 95%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(360 83% 43%), hsl(0 0% 13%));
+    --gradient-card: linear-gradient(180deg, hsl(220 24% 12%), hsl(220 20% 16%));
+    --shadow-glow: 0 0 40px hsl(0 0% 13% / 0.25);
+    --shadow-elegant: 0 10px 40px -10px hsl(360 83% 43% / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Efeito de shine animado nos botões */
+  button, a button, .btn-shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  button::after, 
+  a button::after, 
+  .btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transform: skewX(-25deg);
+    pointer-events: none;
+    transition: left 0s;
+  }
+
+  button:hover::after, 
+  a button:hover::after, 
+  .btn-shimmer:hover::after {
+    left: 150%;
+    transition: left 0.7s ease-out;
+  }
+}
+
+@layer utilities {
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+}
+@layer utilities {
+  /* Sua animação scroll existente */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  /* Adicione estas classes de aspect ratio */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+  
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  .aspect-auto {
+    aspect-ratio: auto;
+  }
+}

@@ -1,0 +1,79 @@
+﻿================================================================
+📦 PACOTE DE DEPLOY - SITE UNIDENTAL
+================================================================
+
+✅ STATUS: SITE COMPILADO E TESTADO LOCALMENTE
+✅ BUILD: REALIZADO COM SUCESSO
+✅ IMAGENS: 28 ARQUIVOS OTIMIZADOS
+
+📁 ESTRUTURA DO PACOTE:
+├── dist/                    → Site compilado
+│   ├── index.html          → HTML principal
+│   └── assets/             → JS, CSS e imagens
+├── .htaccess               → Configuração Apache
+└── ESTE_ARQUIVO.txt        → Instruções
+
+🔧 INFORMAÇÕES TÉCNICAS:
+• Framework: React 18 + TypeScript
+• Build Tool: Vite 5.4.19
+• CSS: Tailwind CSS
+• Tipo: SPA (Single Page Application)
+
+🚀 INSTRUÇÕES PARA DEPLOY:
+
+1. ACESSAR O SERVIDOR:
+   ssh root@172.31.252.70
+
+2. FAZER BACKUP (OPCIONAL):
+   mv /var/www/wordpress /var/www/wordpress_backup_
+
+3. LIMPAR DIRETÓRIO ATUAL:
+   cd /var/www/wordpress
+   rm -rf *
+
+4. ENVIAR ARQUIVOS (DO SEU COMPUTADOR):
+   scp unidental-site-pronto.zip root@172.31.252.70:/tmp/
+
+5. EXTRAIR NO SERVIDOR:
+   cd /var/www/wordpress
+   unzip /tmp/unidental-site-pronto.zip -d .
+   # OU: tar -xzf /tmp/unidental-site-pronto.zip
+
+6. CONFIGURAR PERMISSÕES:
+   chmod 755 /var/www/wordpress
+   chmod 644 /var/www/wordpress/.htaccess
+
+7. REINICIAR APACHE:
+   systemctl restart apache2
+
+8. TESTAR:
+   Acessar http://172.31.252.70
+
+⚠️ CONFIGURAÇÕES ESPECÍFICAS:
+• O site é SPA (React Router) - precisa do .htaccess
+• Apache deve ter mod_rewrite habilitado
+• Pasta de destino: /var/www/wordpress/
+
+🔍 EM CASO DE PROBLEMAS:
+
+1. Verificar logs do Apache:
+   tail -f /var/log/apache2/error.log
+
+2. Testar com curl:
+   curl -I http://localhost/
+
+3. Verificar se arquivos existem:
+   ls -la /var/www/wordpress/dist/
+
+4. Testar direto com servidor estático:
+   cd /var/www/wordpress/dist/
+   npx serve -p 3000
+
+================================================================
+📊 DETALHES DO BUILD:
+• Data: 05/02/2026 14:28
+• JavaScript: 493KB (149KB gzip)
+• CSS: 91KB (14KB gzip)
+• Imagens: 28 arquivos otimizados
+• Status: ✅ PRONTO PARA PRODUÇÃO
+================================================================
