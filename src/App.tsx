@@ -10,6 +10,7 @@ import Cooperado from "./pages/Cooperado";
 import ClinicasRadiologicas from "./pages/ClinicasRadiologicas";
 import EncontreDentista from "./pages/EncontreDentista";
 import NotFound from "./pages/NotFound";
+import { PrivacyPopup } from "@/components/PrivacyPopup"; // 👈 ADICIONE ESTA LINHA
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,8 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* 👈 ADICIONE O POPUP AQUI (FORA DO Routes) */}
+        <PrivacyPopup />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

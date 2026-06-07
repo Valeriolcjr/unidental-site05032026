@@ -1,5 +1,5 @@
 import { NewNavigation } from "@/components/NewNavigation";
-import { HeroCarousel } from "@/components/HeroCarousel";
+import { HeroCarousel } from "@/components/HeroCarousel"; 
 import { TrustedCompanies } from "@/components/TrustedCompanies";
 import { Testimonials } from "@/components/Testimonials";
 import { Diferenciais } from "@/components/Diferenciais";

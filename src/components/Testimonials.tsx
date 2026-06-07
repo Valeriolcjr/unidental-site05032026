@@ -44,13 +44,46 @@ const testimonials = [
 export const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const [cardWidth, setCardWidth] = useState(374);
   const containerRef = useRef<HTMLDivElement>(null);
   const autoPlayRef = useRef<number>();
   const pauseTimeoutRef = useRef<number>();
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
 
-  const cardWidth = 350 + 24; // 374px
+  // Detectar tamanho da tela e ajustar cards por vez E largura dos cards
+  useEffect(() => {
+    const updateLayout = () => {
+      const width = window.innerWidth;
+      
+      // Ajusta quantos cards mostrar por vez
+      if (width < 768) {
+        setCardsPerView(2); // mobile: 2 cards
+      } else if (width >= 768 && width < 1280) {
+        setCardsPerView(3); // tablet: 3 cards
+      } else {
+        setCardsPerView(3); // desktop: 3 cards
+      }
+      
+      // Ajusta largura dos cards
+      if (width < 768) {
+        // Mobile: card ocupa quase toda tela (menos padding)
+        setCardWidth(width - 48); // 24px padding cada lado
+      } else if (width >= 768 && width < 1280) {
+        // Tablet: cards um pouco menores
+        setCardWidth(320); // 320px + gap
+      } else {
+        // Desktop: tamanho original
+        setCardWidth(350 + 24); // 374px
+      }
+    };
+    
+    updateLayout();
+    window.addEventListener('resize', updateLayout);
+    return () => window.removeEventListener('resize', updateLayout);
+  }, []);
+
   const totalSlides = testimonials.length;
   
   // Garantir que extendedTestimonials sempre existe
@@ -59,11 +92,6 @@ export const Testimonials = () => {
       ? [...testimonials, ...testimonials, ...testimonials, ...testimonials]
       : [];
   }, []);
-
-  // Verificar se temos dados para renderizar
-  if (!testimonials || testimonials.length === 0) {
-    return null; // ou um fallback UI
-  }
 
   // Função para pausar autoplay temporariamente
   const pauseAutoPlay = useCallback((duration: number = 2000) => {
@@ -81,7 +109,7 @@ export const Testimonials = () => {
   // Função para ir para o próximo slide
   const goToNext = useCallback(() => {
     setCurrentIndex(prev => {
-      const nextIndex = prev + 1;
+      const nextIndex = prev + cardsPerView;
       if (nextIndex >= totalSlides * 3) {
         setTimeout(() => {
           if (containerRef.current) {
@@ -95,16 +123,16 @@ export const Testimonials = () => {
       }
       return nextIndex;
     });
-  }, [totalSlides]);
+  }, [totalSlides, cardsPerView]);
 
   const goToPrev = useCallback(() => {
     setCurrentIndex(prev => {
-      const prevIndex = prev - 1;
+      const prevIndex = prev - cardsPerView;
       if (prevIndex < 0) {
         setTimeout(() => {
           if (containerRef.current) {
             containerRef.current.style.transition = 'none';
-            setCurrentIndex(totalSlides * 3 - 1);
+            setCurrentIndex(totalSlides * 3 - cardsPerView);
             containerRef.current.offsetHeight;
             containerRef.current.style.transition = 'transform 0.5s ease-out';
           }
@@ -113,7 +141,7 @@ export const Testimonials = () => {
       }
       return prevIndex;
     });
-  }, [totalSlides]);
+  }, [totalSlides, cardsPerView]);
 
   // Touch handlers
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -138,7 +166,7 @@ export const Testimonials = () => {
     if (isAutoPlaying && extendedTestimonials.length > 0) {
       autoPlayRef.current = window.setInterval(() => {
         goToNext();
-      }, 3000);
+      }, 5000);
     }
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
@@ -171,6 +199,11 @@ export const Testimonials = () => {
       />
     ));
   };
+
+  // Verificar se temos dados para renderizar
+  if (!testimonials || testimonials.length === 0) {
+    return null;
+  }
 
   return (
     <section id="depoimentos" className="py-24 bg-gradient-to-b from-white to-gray-50 border-t border-gray-100">
@@ -207,7 +240,7 @@ export const Testimonials = () => {
           </button>
 
           <div
-            className="overflow-hidden mx-12"
+            className="overflow-hidden mx-4 sm:mx-12"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={() => {}}
             onTouchStart={handleTouchStart}
@@ -220,7 +253,11 @@ export const Testimonials = () => {
               style={{ transform: `translateX(-${currentIndex * cardWidth}px)` }}
             >
               {extendedTestimonials.map((testimonial, index) => (
-                <div key={index} className="flex-shrink-0 w-[350px] px-3">
+                <div 
+                  key={index} 
+                  className="flex-shrink-0 px-2 sm:px-3"
+                  style={{ width: cardWidth }}
+                >
                   <Card className="border-border hover:shadow-xl transition-all duration-300 h-full overflow-hidden group">
                     <div className="relative overflow-hidden">
                       <img
@@ -249,15 +286,15 @@ export const Testimonials = () => {
           </div>
 
           <div className="flex justify-center gap-2 mt-8">
-            {testimonials.map((_, index) => (
+            {Array.from({ length: Math.ceil(testimonials.length / cardsPerView) }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => {
-                  setCurrentIndex(index + totalSlides * 2);
+                  setCurrentIndex(index * cardsPerView + totalSlides * 2);
                   pauseAutoPlay(2000);
                 }}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === currentIndex % totalSlides
+                  Math.floor((currentIndex % totalSlides) / cardsPerView) === index
                     ? 'bg-primary w-8'
                     : 'bg-gray-300 hover:bg-primary/50'
                 }`}

@@ -9,6 +9,7 @@ import { WatermarkPattern } from "@/components/ui/watermark-pattern";
 export const NewNavigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  
   const handleLogoClick = (e: React.MouseEvent) => {
     if (location.pathname === "/") {
       e.preventDefault();
@@ -18,29 +19,31 @@ export const NewNavigation = () => {
       });
     }
   };
-  return <nav className="fixed top-0 left-0 right-0 z-50 bg-primary backdrop-blur-lg shadow-lg overflow-hidden">
+  
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary backdrop-blur-lg shadow-lg overflow-hidden">
       <WatermarkPattern />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between min-h-[72px] md:min-h-[80px] py-2">
           {/* Logo */}
           <Link to="/" onClick={handleLogoClick} className="flex items-center group -ml-2">
             <div className="cursor-pointer transition-transform duration-300 group-hover:scale-105">
-              <img alt="Unidental" src={logoNavbar} className="h-14 w-auto drop-shadow-lg" />
+              <img alt="Unidental" src={logoNavbar} className="h-10 md:h-14 w-auto drop-shadow-lg" />
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-10">
-            <Link to="/idss" className="text-primary-foreground hover:opacity-80 transition-opacity text-lg font-bold">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-10">
+            <Link to="/idss" className="text-primary-foreground hover:opacity-80 transition-opacity text-sm md:text-base xl:text-lg font-bold whitespace-nowrap">
               IDSS
             </Link>
             
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-primary-foreground flex items-center space-x-1 hover:opacity-80 transition-opacity outline-none text-base font-bold">
+              <DropdownMenuTrigger className="text-primary-foreground flex items-center gap-1 hover:opacity-80 transition-opacity outline-none text-sm md:text-base xl:text-lg font-bold whitespace-nowrap">
                 <span>Espaço do Cliente</span>
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown className="h-3 w-3 md:h-4 md:w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-card min-w-[200px]">
+              <DropdownMenuContent className="bg-card min-w-[180px] md:min-w-[200px]">
                 <DropdownMenuItem>
                   <Link to="/encontre-dentista" className="w-full">Encontrar dentista</Link>
                 </DropdownMenuItem>
@@ -63,11 +66,11 @@ export const NewNavigation = () => {
             </DropdownMenu>
             
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-primary-foreground flex items-center space-x-1 hover:opacity-80 transition-opacity outline-none text-base font-bold">
+              <DropdownMenuTrigger className="text-primary-foreground flex items-center gap-1 hover:opacity-80 transition-opacity outline-none text-sm md:text-base xl:text-lg font-bold whitespace-nowrap">
                 <span>Espaço do Cooperado</span>
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown className="h-3 w-3 md:h-4 md:w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-card min-w-[200px]">
+              <DropdownMenuContent className="bg-card min-w-[180px] md:min-w-[200px]">
                 <DropdownMenuItem>
                   <a href="https://tiss.unidental.com.br/" target="_blank" rel="noopener noreferrer" className="w-full">Portal do cooperado</a>
                 </DropdownMenuItem>
@@ -80,34 +83,34 @@ export const NewNavigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link to="/privacidade" className="text-primary-foreground hover:opacity-80 transition-opacity text-base font-bold">
+            <Link to="/privacidade" className="text-primary-foreground hover:opacity-80 transition-opacity text-sm md:text-base xl:text-lg font-bold whitespace-nowrap">
               Privacidade
             </Link>
           </div>
 
           {/* Desktop CTAs and Social */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4">
             <a href="https://comercial.unidental.com.br/#:~:text=Escolha%20o%20plano%20ideal%20para%20voc%C3%AA" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-primary-foreground text-primary hover:bg-muted font-bold rounded-full px-6 py-2 text-sm">
+              <Button className="bg-primary-foreground text-primary hover:bg-muted font-bold rounded-full px-4 md:px-5 xl:px-6 py-1.5 md:py-2 text-xs md:text-sm whitespace-nowrap">
                 QUERO SER CLIENTE
               </Button>
             </a>
             
             <Link to="/cooperado">
-              <Button variant="outline" className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary font-bold rounded-full px-6 py-2 text-sm">
+              <Button variant="outline" className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary font-bold rounded-full px-4 md:px-5 xl:px-6 py-1.5 md:py-2 text-xs md:text-sm whitespace-nowrap">
                 QUERO SER COOPERADO
               </Button>
             </Link>
 
-            <div className="flex items-center space-x-3 ml-4">
+            <div className="flex items-center gap-2 xl:gap-3 ml-2 xl:ml-4">
               <a href="https://www.facebook.com/unidentalce/?locale=pt_BR" target="_blank" rel="noopener noreferrer" className="text-primary-foreground hover:opacity-80 transition-opacity">
-                <Facebook className="h-5 w-5" />
+                <Facebook className="h-4 w-4 md:h-5 md:w-5" />
               </a>
               <a href="https://www.instagram.com/unidentalce/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground hover:opacity-80 transition-opacity">
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-4 w-4 md:h-5 md:w-5" />
               </a>
               <a href="https://www.linkedin.com/company/unidentalce/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground hover:opacity-80 transition-opacity">
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-4 w-4 md:h-5 md:w-5" />
               </a>
             </div>
           </div>
@@ -119,7 +122,8 @@ export const NewNavigation = () => {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && <div className="lg:hidden py-4 space-y-3 border-t border-border/20">
+        {mobileMenuOpen && (
+          <div className="lg:hidden py-4 space-y-3 border-t border-border/20">
             <Link to="/idss" className="block text-primary-foreground hover:opacity-80 transition-opacity py-2" onClick={() => setMobileMenuOpen(false)}>
               IDSS
             </Link>
@@ -151,7 +155,9 @@ export const NewNavigation = () => {
                 <Linkedin className="h-6 w-6" />
               </a>
             </div>
-          </div>}
+          </div>
+        )}
       </div>
-    </nav>;
+    </nav>
+  );
 };

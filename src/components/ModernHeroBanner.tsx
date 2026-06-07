@@ -4,8 +4,12 @@ import Autoplay from "embla-carousel-autoplay";
 import heroBanner from "@/assets/hero-banner.jpg";
 import heroDental from "@/assets/hero-dental.jpg";
 
+// Importe o tipo do Embla Carousel
+import type { EmblaCarouselType } from 'embla-carousel';
+
 export const ModernHeroBanner = () => {
-  const [api, setApi] = useState<any>();
+  // Corrigido: usar o tipo correto ao invés de any
+  const [api, setApi] = useState<EmblaCarouselType>();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {

@@ -207,12 +207,17 @@ export default function Cooperado() {
             <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed">
               Faça parte de uma cooperativa que acredita em união, ética e valorização profissional.
             </p>
-            <a href="https://api.whatsapp.com/send/?phone=5585987969299&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+            {/* Botão com download do PDF */}
+            <a 
+              href="/pdfs/ebook-cooperado.pdf" 
+              download
+              className="inline-block"
+            >
               <Button 
                 className="bg-white text-primary hover:bg-primary hover:text-white hover:border-white border-2 border-white rounded-full px-10 py-6 text-lg font-semibold transition-all duration-300"
                 size="lg"
               >
-                QUERO SER UM COOPERADO
+                QUERO SER COOPERADO
               </Button>
             </a>
           </div>

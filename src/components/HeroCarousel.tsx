@@ -1,22 +1,17 @@
-import { useRef } from "react";
-import heroBanner from "@/assets/hero-banner.jpg";
+import bannerImagem from "@/assets/novobannerunidental03062026.png";
 
 export const HeroCarousel = () => {
   return (
-    <section className="relative w-full mt-20">
-      {/* Container que ocupa 100% da largura e mantém proporção 16:9 */}
-      <div className="relative w-full aspect-video">
-        <video
+    <section className="relative w-full mt-20 bg-black">
+      <div 
+        className="relative w-full"
+        style={{ aspectRatio: "2100/600" }}
+      >
+        <img
+          src={bannerImagem}
+          alt="Unidental - Homenagem às mães"
           className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster={heroBanner}
-        >
-          <source src="/src/assets/MÊS DA MULHER NA UNIDENTAL.mp4" type="video/mp4" />
-        </video>
+        />
       </div>
     </section>
   );

@@ -1,5 +1,10 @@
 import type { Config } from "tailwindcss";
 
+// @ts-expect-error - Pacotes sem tipos, mas funcionam perfeitamente
+import tailwindAnimate from "tailwindcss-animate";
+// @ts-expect-error - Pacotes sem tipos, mas funcionam perfeitamente
+import tailwindAspectRatio from "@tailwindcss/aspect-ratio";
+
 export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
@@ -164,7 +169,7 @@ export default {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/aspect-ratio"), // Plugin adicionado para aspect-video
+    tailwindAnimate,
+    tailwindAspectRatio,
   ],
 } satisfies Config;
