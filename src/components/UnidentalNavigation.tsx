@@ -72,7 +72,7 @@ export const UnidentalNavigation = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <a
-                    href="https://pinss.unidental.com.br/"
+                    href="https://unidental.s4e.com.br/SYS/?TipoUsuario=4"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -82,7 +82,7 @@ export const UnidentalNavigation = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <a
-                    href="https://pinss.unidental.com.br/"
+                    href="https://unidental.s4e.com.br/SYS/?TipoUsuario=6"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -92,7 +92,7 @@ export const UnidentalNavigation = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <a
-                    href="https://pinss.unidental.com.br/"
+                    href="https://unidental.s4e.com.br/SYS/?TipoUsuario=2"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -126,12 +126,12 @@ export const UnidentalNavigation = () => {
               <DropdownMenuContent className="bg-white min-w-[220px]">
                 <DropdownMenuItem>
                   <a
-                    href="https://tiss.unidental.com.br/"
+                    href="https://unidental.s4e.com.br/SYS/?TipoUsuario=3"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
                   >
-                    Portal TISS
+                    Portal do Cooperado
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
@@ -149,7 +149,6 @@ export const UnidentalNavigation = () => {
               Privacidade
             </Link>
 
-            {/* Botões com espaçamento aumentado para gap-6 */}
             <div className="flex items-center gap-6 ml-4">
               <a
                 href="https://comercial.unidental.com.br/"

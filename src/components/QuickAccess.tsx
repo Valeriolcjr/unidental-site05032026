@@ -10,7 +10,7 @@ const portals = [
     image: clienteFamiliaIcon,
     title: "Portal do Cliente", 
     subtitle: "Clique para acessar",
-    href: "https://pinss.unidental.com.br/",
+    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=6",
     isImage: true
   },
   { 
@@ -18,15 +18,15 @@ const portals = [
     image: empresaPortalIcon,
     title: "Portal da Empresa", 
     subtitle: "Clique para acessar",
-    href: "https://comercial.unidental.com.br/",
+    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=2",
     isImage: true
   },
   { 
     icon: null,
     image: tissPortalIcon,
-    title: "Portal TISS", 
+    title: "Portal do Cooperado", 
     subtitle: "Clique para acessar",
-    href: "https://tiss.unidental.com.br/",
+    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=3",
     isImage: true
   },
 ];
@@ -40,7 +40,7 @@ const quickLinks = [
   { 
     icon: FileText, 
     title: "2ª Via de Boleto", 
-    href: "https://pinss.unidental.com.br/"
+    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=4"
   },
   { 
     icon: Search, 
@@ -55,7 +55,7 @@ const quickLinks = [
   { 
     icon: TrendingUp, 
     title: "Imposto de Renda", 
-    href: "https://pinss.unidental.com.br/"
+    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=6"
   },
   { 
     icon: Users, 

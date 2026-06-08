@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo-horizontal.png";
 import { WatermarkPattern } from "@/components/ui/watermark-pattern";
+
 export const NewFooter = () => {
-  return <footer className="bg-dark-red text-white pt-12 pb-6 relative overflow-hidden">
+  return (
+    <footer className="bg-dark-red text-white pt-12 pb-6 relative overflow-hidden">
       <WatermarkPattern />
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -12,12 +14,12 @@ export const NewFooter = () => {
             <h3 className="font-bold text-lg mb-4">Serviços Online</h3>
             <ul className="space-y-2">
               <li>
-                <a href="https://pinss.unidental.com.br/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
+                <a href="https://unidental.s4e.com.br/SYS/?TipoUsuario=6" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
                   Imposto de Renda
                 </a>
               </li>
               <li>
-                <a href="https://pinss.unidental.com.br/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
+                <a href="https://unidental.s4e.com.br/SYS/?TipoUsuario=2" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
                   Alteração Cadastral
                 </a>
               </li>
@@ -27,12 +29,12 @@ export const NewFooter = () => {
                 </Link>
               </li>
               <li>
-                <a href="https://pinss.unidental.com.br/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
+                <a href="https://unidental.s4e.com.br/SYS/?TipoUsuario=2" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
                   Cliente
                 </a>
               </li>
               <li>
-                <a href="https://tiss.unidental.com.br/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
+                <a href="https://unidental.s4e.com.br/SYS/?TipoUsuario=3" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
                   Cooperado
                 </a>
               </li>
@@ -44,7 +46,7 @@ export const NewFooter = () => {
             </ul>
           </div>
 
-          {/* Coluna 2 - Institucional */}
+          {/* Coluna 2 - Institucional (mantém igual) */}
           <div>
             <h3 className="font-bold text-lg mb-4">Institucional</h3>
             <ul className="space-y-2">
@@ -81,7 +83,7 @@ export const NewFooter = () => {
             </ul>
           </div>
 
-          {/* Coluna 3 - Planos e Serviços */}
+          {/* Coluna 3 - Planos e Serviços (mantém igual) */}
           <div>
             <h3 className="font-bold text-lg mb-4">Planos e Serviços</h3>
             <ul className="space-y-2">
@@ -118,7 +120,7 @@ export const NewFooter = () => {
             </ul>
           </div>
 
-          {/* Coluna 5 - Contato */}
+          {/* Coluna 4 - Contato (mantém igual) */}
           <div>
             <h3 className="font-bold text-lg mb-4">Contato</h3>
             <ul className="space-y-3">
@@ -159,5 +161,6 @@ export const NewFooter = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };

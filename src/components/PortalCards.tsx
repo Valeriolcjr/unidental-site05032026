@@ -6,21 +6,21 @@ const portals = [
     title: "Portal do Cliente",
     subtitle: "Acesse seu painel exclusivo",
     ariaLabel: "Acessar Portal do Cliente",
-    link: "https://unidental.s4e.com.br//SYS/?TipoUsuario=6",
+    link: "https://unidental.s4e.com.br/SYS/?TipoUsuario=6",
   },
   {
     icon: Building,
     title: "Portal da Empresa",
     subtitle: "Área exclusiva para empresas parceiras",
     ariaLabel: "Acessar Portal da Empresa",
-    link: "https://unidental.s4e.com.br//SYS/?TipoUsuario=2",
+    link: "https://unidental.s4e.com.br/SYS/?TipoUsuario=2",
   },
   {
     icon: Users,
     title: "Portal do Cooperado",
     subtitle: "Acesse o sistema de integração e conformidade",
     ariaLabel: "Acessar Portal do Cooperado",
-    link: "https://unidental.s4e.com.br//SYS/?TipoUsuario=3",
+    link: "https://unidental.s4e.com.br/SYS/?TipoUsuario=3",
   },
 ];
 
