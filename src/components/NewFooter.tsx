@@ -14,12 +14,12 @@ export const NewFooter = () => {
             <h3 className="font-bold text-lg mb-4">Serviços Online</h3>
             <ul className="space-y-2">
               <li>
-                <a href="https://unidental.s4e.com.br/SYS/?TipoUsuario=6" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
+                <a href="https://unidental.s4e.com.br/SYS/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
                   Imposto de Renda
                 </a>
               </li>
               <li>
-                <a href="https://unidental.s4e.com.br/SYS/?TipoUsuario=2" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
+                <a href="https://unidental.s4e.com.br/SYS/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
                   Alteração Cadastral
                 </a>
               </li>
@@ -29,12 +29,12 @@ export const NewFooter = () => {
                 </Link>
               </li>
               <li>
-                <a href="https://unidental.s4e.com.br/SYS/?TipoUsuario=2" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
+                <a href="https://unidental.s4e.com.br/SYS/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
                   Cliente
                 </a>
               </li>
               <li>
-                <a href="https://unidental.s4e.com.br/SYS/?TipoUsuario=3" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
+                <a href="https://unidental.s4e.com.br/SYS/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity text-sm">
                   Cooperado
                 </a>
               </li>
@@ -46,7 +46,7 @@ export const NewFooter = () => {
             </ul>
           </div>
 
-          {/* Coluna 2 - Institucional (mantém igual) */}
+          {/* Coluna 2 - Institucional */}
           <div>
             <h3 className="font-bold text-lg mb-4">Institucional</h3>
             <ul className="space-y-2">
@@ -83,7 +83,7 @@ export const NewFooter = () => {
             </ul>
           </div>
 
-          {/* Coluna 3 - Planos e Serviços (mantém igual) */}
+          {/* Coluna 3 - Planos e Serviços */}
           <div>
             <h3 className="font-bold text-lg mb-4">Planos e Serviços</h3>
             <ul className="space-y-2">
@@ -120,7 +120,7 @@ export const NewFooter = () => {
             </ul>
           </div>
 
-          {/* Coluna 4 - Contato (mantém igual) */}
+          {/* Coluna 4 - Contato */}
           <div>
             <h3 className="font-bold text-lg mb-4">Contato</h3>
             <ul className="space-y-3">

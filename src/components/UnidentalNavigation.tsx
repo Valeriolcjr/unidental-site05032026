@@ -72,7 +72,7 @@ export const UnidentalNavigation = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <a
-                    href="https://unidental.s4e.com.br/SYS/?TipoUsuario=4"
+                    href="https://unidental.s4e.com.br/SYS/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -82,7 +82,7 @@ export const UnidentalNavigation = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <a
-                    href="https://unidental.s4e.com.br/SYS/?TipoUsuario=6"
+                    href="https://unidental.s4e.com.br/SYS/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -92,7 +92,7 @@ export const UnidentalNavigation = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <a
-                    href="https://unidental.s4e.com.br/SYS/?TipoUsuario=2"
+                    href="https://unidental.s4e.com.br/SYS/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"
@@ -126,7 +126,7 @@ export const UnidentalNavigation = () => {
               <DropdownMenuContent className="bg-white min-w-[220px]">
                 <DropdownMenuItem>
                   <a
-                    href="https://unidental.s4e.com.br/SYS/?TipoUsuario=3"
+                    href="https://unidental.s4e.com.br/SYS/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full"

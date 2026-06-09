@@ -48,16 +48,16 @@ export const NewNavigation = () => {
                   <Link to="/encontre-dentista" className="w-full">Encontrar dentista</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <a href="https://unidental.s4e.com.br//SYS/?TipoUsuario=4" target="_blank" rel="noopener noreferrer" className="w-full">2ª via de boleto</a>
+                  <a href="https://unidental.s4e.com.br/SYS/" target="_blank" rel="noopener noreferrer" className="w-full">2ª via de boleto</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <a href="https://unidental.s4e.com.br//SYS/?TipoUsuario=2" target="_blank" rel="noopener noreferrer" className="w-full">Área do cliente</a>
+                  <a href="https://unidental.s4e.com.br/SYS/" target="_blank" rel="noopener noreferrer" className="w-full">Área do cliente</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link to="/clinicas-radiologicas" className="w-full">Clínicas Radiológicas</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <a href="https://unidental.s4e.com.br//SYS/?TipoUsuario=6" target="_blank" rel="noopener noreferrer" className="w-full">Imposto de renda</a>
+                  <a href="https://unidental.s4e.com.br/SYS/" target="_blank" rel="noopener noreferrer" className="w-full">Imposto de renda</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <a href="https://comercial.unidental.com.br/#:~:text=Escolha%20o%20plano%20ideal%20para%20voc%C3%AA" target="_blank" rel="noopener noreferrer" className="w-full">Quero ser cliente</a>
@@ -72,10 +72,10 @@ export const NewNavigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-card min-w-[180px] md:min-w-[200px]">
                 <DropdownMenuItem>
-                  <a href="https://unidental.s4e.com.br//SYS/?TipoUsuario=3" target="_blank" rel="noopener noreferrer" className="w-full">Portal do cooperado</a>
+                  <a href="https://unidental.s4e.com.br/SYS/" target="_blank" rel="noopener noreferrer" className="w-full">Portal do cooperado</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <a href="https://unidental.s4e.com.br//SYS/?TipoUsuario=3" target="_blank" rel="noopener noreferrer" className="w-full">Informações TISS</a>
+                  <a href="https://unidental.s4e.com.br/SYS/" target="_blank" rel="noopener noreferrer" className="w-full">Informações TISS</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <a href="#clube-vantagens" className="w-full">Clube de Vantagens</a>

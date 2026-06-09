@@ -10,7 +10,7 @@ const portals = [
     image: clienteFamiliaIcon,
     title: "Portal do Cliente", 
     subtitle: "Clique para acessar",
-    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=6",
+    href: "https://unidental.s4e.com.br/SYS/",
     isImage: true
   },
   { 
@@ -18,7 +18,7 @@ const portals = [
     image: empresaPortalIcon,
     title: "Portal da Empresa", 
     subtitle: "Clique para acessar",
-    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=2",
+    href: "https://unidental.s4e.com.br/SYS/",
     isImage: true
   },
   { 
@@ -26,7 +26,7 @@ const portals = [
     image: tissPortalIcon,
     title: "Portal do Cooperado", 
     subtitle: "Clique para acessar",
-    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=3",
+    href: "https://unidental.s4e.com.br/SYS/",
     isImage: true
   },
 ];
@@ -40,7 +40,7 @@ const quickLinks = [
   { 
     icon: FileText, 
     title: "2ª Via de Boleto", 
-    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=4"
+    href: "https://unidental.s4e.com.br/SYS/"
   },
   { 
     icon: Search, 
@@ -55,7 +55,7 @@ const quickLinks = [
   { 
     icon: TrendingUp, 
     title: "Imposto de Renda", 
-    href: "https://unidental.s4e.com.br/SYS/?TipoUsuario=6"
+    href: "https://unidental.s4e.com.br/SYS/"
   },
   { 
     icon: Users, 
@@ -84,7 +84,6 @@ export const QuickAccess = () => {
                 rel="noopener noreferrer"
                 className="group relative bg-primary hover:bg-primary/90 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 overflow-hidden"
               >
-                {/* Background decoration */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
                 
@@ -113,7 +112,6 @@ export const QuickAccess = () => {
 
         {/* Quick Access Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          {/* Title */}
           <div className="lg:col-span-4 lg:sticky lg:top-32">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-tight tracking-tight">
               ACESSO<br />RÁPIDO
@@ -124,7 +122,6 @@ export const QuickAccess = () => {
             </p>
           </div>
 
-          {/* Links */}
           <div className="lg:col-span-8">
             <div className="bg-white rounded-2xl shadow-lg border border-border/50 overflow-hidden">
               {quickLinks.map((link, index) => {
