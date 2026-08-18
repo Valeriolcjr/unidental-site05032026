@@ -1,7 +1,6 @@
 import skylerLogo from "@/assets/skyler-logo.png";
 import uniclinicLogo from "@/assets/uniclinic-logo.png";
 import sindifortLogo from "@/assets/sindifort-logo.png";
-import coaphLogo from "@/assets/coaph-logo.png";
 import uniateneuLogo from "@/assets/uniateneu-logo.png";
 import { WatermarkPattern } from "@/components/ui/watermark-pattern";
 
@@ -9,7 +8,6 @@ const companies = [
   { name: "Skyler", logo: skylerLogo },
   { name: "Hospital Uniclinic", logo: uniclinicLogo },
   { name: "Sindifort", logo: sindifortLogo },
-  { name: "Coaph", logo: coaphLogo },
   { name: "UniAteneu", logo: uniateneuLogo },
 ];
 
