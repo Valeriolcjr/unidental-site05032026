@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import bannerFamilia from "@/assets/estatico - BANNER FAMILIA.webp";
-import bannerPF from "@/assets/estatico - BANNER PF.webp";
-import bannerPJ from "@/assets/estatico - BANNER PJ.webp";
+import bannerFamilia from "@/assets/banner-site-black-november-plano-familia-2100x600.webp";
+import bannerPF from "@/assets/banner-site-black-november-pessoa-fisica-2100x600.webp";
 
 const banners = [
   { imagem: bannerFamilia, alt: "Unidental - Plano Família" },
   { imagem: bannerPF, alt: "Unidental - Pessoa Física" },
-  { imagem: bannerPJ, alt: "Unidental - Pessoa Jurídica" },
 ];
 
 export const HeroCarousel = () => {
